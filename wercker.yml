@@ -1,0 +1,15 @@
+box: rocker/tidyverse
+build:
+  steps:
+    - script:
+      name: Install packages
+      code: |
+       Rscript -e "install.packages('infer')"
+    - script:
+      name: Install packages
+      code: |
+       Rscript -e "install.packages('openintro')"
+    - script:
+      name: Render R markdown
+      code: |
+        Rscript -e "library(rmarkdown);render('lab-09-sim-inference.Rmd')"
